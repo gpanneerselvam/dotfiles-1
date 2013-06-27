@@ -13,7 +13,7 @@ echo $home
 echo $curdir
 
 # Add depencies first
-# source $curdir/install-deps.sh
+source $curdir/install-deps.sh
 
 case "`uname -s`" in
   MINGW*)

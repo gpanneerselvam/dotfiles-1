@@ -1,8 +1,8 @@
-" Set runtime path for windows
-set runtimepath+=~/.vim
-
 " Make vim more useful
 set nocompatible
+
+" Set runtime path for windows
+set runtimepath+=~/.vim
 
 " Set syntax highlighting options.
 set t_Co=256
@@ -48,7 +48,7 @@ set formatoptions+=l " Don't break lines that are already long
 set formatoptions+=1 " Break before 1-letter words
 set gdefault " By default add g flag to search/replace. Add g to toggle.
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
-set history=1000 " Increase history from 20 default to 1000
+set history=40 " Increase history from 20 default to 1000
 set hlsearch " Highlight searches
 set ignorecase " Ignore case of searches.
 set incsearch " Highlight dynamically as pattern is typed.
@@ -260,3 +260,6 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
+
+" Reload .vimrc after editing *hopefully*
+" :au! BufWritePost $MYVIMRC source $MYVIMRC

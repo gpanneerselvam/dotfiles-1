@@ -21,7 +21,7 @@ alias projects="~/Documents/Visual\ Studio\ 2010/Projects"
 alias his="history"
 # alias j="jobs"
 # alias v="vim"
-alias open="explore"
+alias open="explorer"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
