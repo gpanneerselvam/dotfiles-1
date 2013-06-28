@@ -8,7 +8,6 @@ set runtimepath+=~/.vim
 set t_Co=256
 " set background=dark
 syntax on
-" colorscheme badwolf
 
 " Enabled later, after Pathogen
 filetype off
@@ -115,7 +114,7 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 
 " Sudo write (,W)
-noremap <leader>W :w !sudo tee %<CR>
+ noremap <leader>w :w <CR>
 
 " Remap :W to :w
 " command W w
@@ -262,4 +261,7 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 
 " Reload .vimrc after editing *hopefully*
-" :au! BufWritePost $MYVIMRC source $MYVIMRC
+" :au! BufWritePost ~/.vimrc source ~/.vimrc
+
+colorscheme asu1dark
+set fdc=0
