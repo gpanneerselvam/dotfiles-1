@@ -44,12 +44,15 @@ export BOLD
 export RESET
 
 function parse_git_dirty() {
-   # git diff --quiet --ignore-submodules HEAD 2>/dev/null; [ $? -eq 1 ] && echo ' **changes**'
+   # check if we're in a git repo
+   git rev-parse --is-inside-work-tree &>/dev/null || return
    [[ $(git status --porcelain --ignore-submodules 2>/dev/null ) != "" ]] && echo ' **changes**' 
 }
 
 function parse_git_branch() {
-	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
+   # check if we're in a git repo
+   git rev-parse --is-inside-work-tree &>/dev/null || return
+   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
 }
 
 export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]on \[$GREEN\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$ORANGE\]\$(parse_git_branch)\[$MAGENTA\]\$(parse_git_dirty)\[$WHITE\]\n\$ \[$RESET\]"
