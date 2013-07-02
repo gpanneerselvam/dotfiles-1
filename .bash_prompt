@@ -44,7 +44,8 @@ export BOLD
 export RESET
 
 function parse_git_dirty() {
-   git diff --quiet --ignore-submodules HEAD 2>/dev/null; [ $? -eq 1 ] && echo ' **changes**'
+   # git diff --quiet --ignore-submodules HEAD 2>/dev/null; [ $? -eq 1 ] && echo ' **changes**'
+   [[ $(git status --porcelain --ignore-submodules 2>/dev/null ) != "" ]] && echo ' **changes**' 
 }
 
 function parse_git_branch() {
