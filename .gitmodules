@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/colorschemes"]
 	path = .vim/bundle/colorschemes
 	url = git@github.com:flazz/vim-colorschemes.git
+[submodule ".vim/bundle/vim-csharp"]
+	path = .vim/bundle/vim-csharp
+	url = git@github.com:ermagana/vim-csharp.git
