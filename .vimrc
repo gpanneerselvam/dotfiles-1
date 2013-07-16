@@ -263,5 +263,5 @@ nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 " Reload .vimrc after editing *hopefully*
 " :au! BufWritePost ~/.vimrc source ~/.vimrc
 
-colorscheme asu1dark
+colorscheme greenvision
 set fdc=0
