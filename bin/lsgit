@@ -139,7 +139,7 @@ sub display_repo {
         $status =~ s/^(?=.)/  /mg;
         $gitstat = $status eq '' ? '' : '    (changes)';
     }
-    print sprintf ("%-30sLast Modified%20s%10s\n", $name, $updated, $gitstat);
+    print sprintf ("%-40sLast Modified%20s%10s\n", $name, $updated, $gitstat);
 }
 
 
