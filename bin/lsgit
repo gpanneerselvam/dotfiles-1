@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-
+# Orignal Source: https://github.com/DeeNewcum/dotfiles/blob/master/bin/lsgit
 # List ALL Git repositories on the current machine, grouped by cloned repositories.
 # 
 # This is essentially a wrapper around:
