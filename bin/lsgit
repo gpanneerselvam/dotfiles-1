@@ -67,15 +67,22 @@ while (my ($git_dir, $data) = each %repos) {
     ## fill out %revisions
     $data->{latest_change} = 0;
     $data->{latest_change_human} = '';
+    $data->{branch} = 'master';
     if (!$cmdline_raw) {
-        foreach my $l (split /\n(?=commit )/s, git(qw[rev-list --all --walk-reflogs --pretty=%ct%n%cr%n], $git_dir)) {
+        foreach my $l (split /\n(?=commit )/s, git(qw[rev-list --all --max-count=1 --walk-reflogs --pretty=%ct%n%cr%n], $git_dir)) {
             my @F = split /\n/, $l;
             splice @F, 0, scalar(@F) - 3;
             my ($revision, $datetime, $datetime_human) = @F;
             push( @{$revisions{$revision}}, $git_dir);
+
+            my ($branch) = grep /^\*[^\*]/, git(qw[branch --no-color], $git_dir);
+            $branch =~ s/\*//g;
+            $branch =~ s/\n//g;
+
             if (defined($datetime) && $datetime > $data->{latest_change}) {
                 $data->{latest_change}       = $datetime;
                 $data->{latest_change_human} = $datetime_human;
+                $data->{branch} = $branch;
             }
         }
     }
@@ -106,6 +113,7 @@ if ($cmdline_raw) {
 } else {
     my %output_seen;
     my $is_first = 1;
+    print sprintf ("%-35s%19s%15s%10s\n", 'Directory', 'Last Modified', 'Current Branch', 'Changes?');
     foreach my $repo (sort repo_sort keys %repos) {
         next if ($output_seen{$repo});
         my @this_cluster = ($repo, keys(%{$repos{$repo}{related_to}}));
@@ -125,6 +133,7 @@ sub display_repo {
     my %repo = %{$repos{$git_dir}};
     my $name = $repo{work_tree} || $git_dir;
     my $updated = $repo{latest_change_human} || 'NEVER';
+    my $branch = $repo{branch} || 'master';
     my $gitstat = '';
     #my $when = scalar(localtime($repo{latest_change}));
     if ($cmdline_status) {
@@ -137,9 +146,9 @@ sub display_repo {
                 },
                 @cmd);
         $status =~ s/^(?=.)/  /mg;
-        $gitstat = $status eq '' ? '' : '    (changes)';
+        $gitstat = $status eq '' ? '' : '     Y    ';
     }
-    print sprintf ("%-40sLast Modified%20s%10s\n", $name, $updated, $gitstat);
+    print sprintf ("%-35s%19s%15s%10s\n", $name, $updated, $branch, $gitstat);
 }
 
 
@@ -149,9 +158,6 @@ sub repo_sort {
        $repos{$b}{latest_change} <=> $repos{$a}{latest_change}
     or $a cmp $b
 }
-
-
-
 
 # runs a 'git' command, under the context of a specific repo....  the repo should be specified as
 # the last argument

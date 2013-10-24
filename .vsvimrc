@@ -1,2 +1,3 @@
 set vsvim_usereditordefaults
+set novsvim_useeditorindent
 set number
