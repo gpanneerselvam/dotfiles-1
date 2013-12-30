@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl-g
 # Orignal Source: https://github.com/DeeNewcum/dotfiles/blob/master/bin/lsgit
 # List ALL Git repositories on the current machine, grouped by cloned repositories.
 # 
@@ -23,6 +23,7 @@ my %repos;
 open my $pin, '-|',  'find', '.', '-name', '.git', '-type', 'd'
         or die $!;
 
+my $start = time;
 while (<$pin>) {
     chomp;
     my $git_dir = File::Basename::dirname($_);
@@ -125,7 +126,9 @@ if ($cmdline_raw) {
         $is_first = 0;
     }
 }
+my $end = time;
 
+print sprintf("Ran in %s milliseconds", $end - $start);
 
 
 sub display_repo {

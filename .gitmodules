@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/vim-csharp"]
 	path = .vim/bundle/vim-csharp
 	url = git@github.com:ermagana/vim-csharp.git
+[submodule ".vim/bundle/vim-easymotion"]
+	path = .vim/bundle/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
