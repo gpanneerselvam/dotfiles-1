@@ -68,6 +68,11 @@ do
 		# cmd link
 	fi
 done
+
+# manually set the .git folder :(
+symlink "$curdir/.gitignore" "$home/.gitignore"
+symlink "$curdir/.gitconfig" "$home/.gitconfig"
+
 unset link
 unset file
 

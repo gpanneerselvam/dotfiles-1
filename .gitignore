@@ -14,3 +14,9 @@ Thumbs.db
 .Trashes
 .vim/undo/
 .vim/swaps/
+
+# Visual Studio General Ignores
+[Bb]in/
+[Oo]bj/
+# solution user options
+*.suo
