@@ -1,3 +1,4 @@
-set vsvim_usereditordefaults
-set novsvim_useeditorindent
-set number
+#set vsvim_usereditordefaults
+#set novsvim_useeditorindent
+set nonumber
+set backspace=indent,eol,start
