@@ -20,4 +20,4 @@ Thumbs.db
 [Oo]bj/
 # solution user options
 *.suo
-specs/
+.netrwhist

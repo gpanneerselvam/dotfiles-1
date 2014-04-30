@@ -17,8 +17,12 @@ case "`uname -s`" in
     winpwd="cygpath -wa ."
     ;;
 
+  Linux*)
+    exit 2
+    ;;
+
   *)
-    echo "This script should only be run under MSYS or Cygwin."
+    echo "This script should only be run under Linux, MSYS or Cygwin."
     exit 1
     ;;
 esac

@@ -20,21 +20,27 @@ case "`uname -s`" in
     cmdslash="//"
     ;;
 
+  Linux*)
+    cmdslash="/"
+    ;;
+
   CYGW*)
     cmdslash="/"
     ;;
 
   *)
-    echo "This script should only be run under MSYS or Cygwin."
+    echo "This script should only be run under Linux, MSYS or Cygwin."
     exit 1
     ;;
 esac
 
 mklink=`bash "$curdir/testmklink.sh"`
 
-if [ -z "$mklink" ]; then
-	echo "Won't be able to make symbolic links"
-	exit 1
+if [ $? -eq 2 ]; then
+    mklink="ln -s"
+elif [ -z "$mklink" ]; then
+    echo "Won't be able to make symbolic links"
+    exit 1
 fi
 
 # Convert to windows style slashing
@@ -49,7 +55,9 @@ symlink() # target, link
   target=$1
   link=$2
   
-  if [ -d "$target" ]; then
+  if [ "$mklink" = "ln -s" ]; then
+    $mklink $target $link 
+  elif [ -d "$target" ]; then
     # cmd ${cmdslash}c rd "`wpath $link`" > /dev/null 2>&1
     $mklink ${cmdslash}d "`wpath $link`" "`wpath $target`"
     # echo ${cmdslash}d "`wpath $link`" "`wpath $target`"
