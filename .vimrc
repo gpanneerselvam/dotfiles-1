@@ -224,7 +224,6 @@ set relativenumber " Use relative line numbers. Current line is still in status 
 au BufReadPost,BufNewFile * set relativenumber
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
-" call pathogen#runtime_append_all_bundles()
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -265,5 +264,9 @@ nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 " Reload .vimrc after editing *hopefully*
 :au! BufWritePost ~/.vimrc source ~/.vimrc
 
-colorscheme molokai
+if has('win32')
+    colorscheme MountainDew
+else
+    colorscheme molokai
+endif
 set fdc=0
