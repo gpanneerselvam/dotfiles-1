@@ -21,3 +21,4 @@ Thumbs.db
 # solution user options
 *.suo
 .netrwhist
+.gem/

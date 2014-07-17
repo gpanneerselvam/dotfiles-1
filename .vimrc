@@ -129,6 +129,9 @@ imap ^^ ↑
 imap VV ↓
 imap aa λ
 
+" Map esc
+imap jj <ESC>
+
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-

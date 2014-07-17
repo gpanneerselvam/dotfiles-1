@@ -2,3 +2,6 @@
 #set novsvim_useeditorindent
 set nonumber
 set backspace=indent,eol,start
+
+" Map esc
+imap jj <ESC>
