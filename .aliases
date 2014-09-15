@@ -8,8 +8,8 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -" # cd's to the previous path
 
 # Shortcuts
-alias goto="cd"
-alias dropbox="~/Documents/Dropbox"
+alias goto="cd "
+alias dropbox="~/Dropbox"
 alias downloads="~/Downloads"
 alias desktop="~/Desktop"
 alias projects="~/Documents/Visual\ Studio\ 2010/Projects"
@@ -22,6 +22,35 @@ alias his="history"
 # alias j="jobs"
 # alias v="vim"
 alias open="explorer"
+
+# My Shortcuts
+alias dev="/c/Users/gpanneerselvam/Documents/Developer"
+alias devd="~/Developer"
+alias devc="/c/Developer"
+alias mypro="~/Documents/Developer/MyProjects"
+alias myproc="/c/Developer/Myprojects"
+
+alias sublimepackages="'/c/Program Files/Sublime Text 3/Packages'"
+alias nodepackages="/c/Users/gpanneerselvam/AppData/Roaming/npm/node_modules"
+alias gempackages="/c/Ruby193/lib/ruby/gems/1.9.1/gems"
+alias mynugetpackages="/c/.nuget/MyPackageSource"
+
+alias programfiles="'/c/Program Files'"
+alias programfiles86="'/c/Program Files (x86)'"
+
+# Axxess Shortcuts
+alias axproc="/c/Developer/AxxessProjects"
+alias management="~/Documents/Developer/AgencyManagement/management/"
+alias lookup="~/Documents/Developer/AgencyManagement/lookup/"
+alias oasisc="~/Documents/Developer/AgencyManagement/oasisc/"
+alias website="~/Documents/Developer/AgencyManagement/website/"
+alias core="~/Documents/Developer/AgencyManagement/core/"
+
+alias startm="start ~/Documents/Developer/AgencyManagement/management/*.sln"
+alias startl="start ~/Documents/Developer/AgencyManagement/lookup/*.sln"
+alias starto="start ~/Documents/Developer/AgencyManagement/oasisc/*.sln"
+alias startw="start ~/Documents/Developer/AgencyManagement/website/*.sln"
+alias startc="start ~/Documents/Developer/AgencyManagement/core/*.sln"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -104,3 +133,4 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # alias pumpitup="osascript -e 'set volume 10'"
 # alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 alias freshen="rm -rf packages; rm -rf */bin; rm -rf */obj; rm *nupkg;nuget restore *sln; nuget update *sln -source axxess"
+alias clean="rm -rf packages; rm -rf */bin; rm -rf */obj;"
