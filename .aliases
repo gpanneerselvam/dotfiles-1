@@ -24,33 +24,30 @@ alias his="history"
 alias open="explorer"
 
 # My Shortcuts
-alias dev="/c/Users/gpanneerselvam/Documents/Developer"
-alias devd="~/Developer"
-alias devc="/c/Developer"
-alias mypro="~/Documents/Developer/MyProjects"
-alias myproc="/c/Developer/Myprojects"
+alias dev="~/Developer"
+alias wspace="~/Developer/Workspace"
+alias wruby="~/Developer/Workspace/Ruby"
+alias wnode="~/Developer/Workspace/Node"
+alias wjava="~/Developer/Workspace/Java"
+alias wnet="~/Developer/Workspace/DotNet"
+alias devmy="~/Developer/My"
+alias devcom="~/Developer/Company"
+alias devcomm="~/Developer/Community"
 
 alias sublimepackages="'/c/Program Files/Sublime Text 3/Packages'"
-alias nodepackages="/c/Users/gpanneerselvam/AppData/Roaming/npm/node_modules"
-alias gempackages="/c/Ruby193/lib/ruby/gems/1.9.1/gems"
+alias nodepackages="/c/Users/Govind/AppData/Roaming/npm/node_modules"
+alias gempackages="/c/Ruby200/lib/ruby/gems/2.0.0/gems"
 alias mynugetpackages="/c/.nuget/MyPackageSource"
 
 alias programfiles="'/c/Program Files'"
 alias programfiles86="'/c/Program Files (x86)'"
 
 # Axxess Shortcuts
-alias axproc="/c/Developer/AxxessProjects"
-alias management="~/Documents/Developer/AgencyManagement/management/"
-alias lookup="~/Documents/Developer/AgencyManagement/lookup/"
-alias oasisc="~/Documents/Developer/AgencyManagement/oasisc/"
-alias website="~/Documents/Developer/AgencyManagement/website/"
-alias core="~/Documents/Developer/AgencyManagement/core/"
+alias authserver="~/Developer/My/Thinktecture.AuthorizationServer"
+alias idserver="~/Developer/My/Thinktecture.IdentityServer.v2"
 
-alias startm="start ~/Documents/Developer/AgencyManagement/management/*.sln"
-alias startl="start ~/Documents/Developer/AgencyManagement/lookup/*.sln"
-alias starto="start ~/Documents/Developer/AgencyManagement/oasisc/*.sln"
-alias startw="start ~/Documents/Developer/AgencyManagement/website/*.sln"
-alias startc="start ~/Documents/Developer/AgencyManagement/core/*.sln"
+alias starta="start ~/Developer/My/Thinktecture.AuthorizationServer/source/Thinktecture.AuthorizationServer.sln"
+alias starti="start ~/Developer/My/Thinktecture.IdentityServer.v2/Thinktecture.IdentityServer.sln"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
