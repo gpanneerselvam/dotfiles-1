@@ -80,8 +80,8 @@
 # 	insteadOf = "git://github.com/ermagana/"
 	
 [user]
-	name = Erik Magana
-	email = erik.r.magana@gmail.com
+	name = Govindarajan Panneerselvam
+	email = imgovind@live.com
 
 [push]
 	default = matching
