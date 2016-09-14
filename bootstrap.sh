@@ -6,7 +6,7 @@ if [ "$curdir" == "." ]
 	then
 		curdir=$PWD
 	else
-		curdir="$PWD/$curdir"
+		curdir="$PWD"
 fi
 
 echo $home
@@ -40,7 +40,7 @@ if [ $? -eq 2 ]; then
     mklink="ln -s"
 elif [ -z "$mklink" ]; then
     echo "Won't be able to make symbolic links"
-    exit 1
+    #exit 1
 fi
 
 # Convert to windows style slashing
